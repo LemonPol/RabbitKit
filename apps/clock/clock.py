@@ -6,7 +6,7 @@ from datetime import datetime
 pygame.init()
 
 WIDTH, HEIGHT = 800, 480
-screen = pygame.display.set_mode((WIDTH, HEIGHT))
+screen = pygame.display.set_mode((WIDTH, HEIGHT), pygame.NOFRAME)
 pygame.display.set_caption("Miffy Clock")
 center = (WIDTH // 2, HEIGHT // 2)
 
@@ -42,6 +42,10 @@ def blit_rotated(image, angle, pos):
 while True:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
+            pygame.quit()
+            sys.exit()
+    if event.type == pygame.KEYDOWN:
+        if event.key == pygame.K_ESCAPE:
             pygame.quit()
             sys.exit()
 
