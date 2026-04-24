@@ -341,17 +341,6 @@ def direction_between(a, b):
     dx = b[0] - a[0]
     dy = b[1] - a[1]
 
-    # Handles wraparound
-    if dx > GRID_SIZE:
-        dx = -GRID_SIZE
-    elif dx < -GRID_SIZE:
-        dx = GRID_SIZE
-
-    if dy > GRID_SIZE:
-        dy = -GRID_SIZE
-    elif dy < -GRID_SIZE:
-        dy = GRID_SIZE
-
     return (
         dx // GRID_SIZE,
         dy // GRID_SIZE,
